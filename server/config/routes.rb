@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   namespace :api do
+    get 'users/create'
+  end
+  namespace :api do
     get 'sessions/create'
     get 'sessions/destroy'
   end
