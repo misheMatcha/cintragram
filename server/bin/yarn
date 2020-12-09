@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+APP_ROOT = File.expand_path('..', __dir__)
+Dir.chdir(APP_ROOT) do
+  begin
+    exec "pkg", *ARGV
+  rescue Errno::ENOENT
+    $stderr.puts " executable was not detected in the system."
+    $stderr.puts "Download  at https://pkg.com/en/docs/install"
+    exit 1
+  end
+end
